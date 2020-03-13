@@ -1,7 +1,5 @@
 # Data Mining
-Data Mining Project - 2019_2020 Semester 2
-
-Data Mining (WQD7005)
+Data Mining Project (WQD7005)
 
 ## Project title: Text mining on customer feedbacks of different laptop brands.
 
