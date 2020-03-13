@@ -1,4 +1,4 @@
-# DataMining
+# Data Mining
 Data Mining Project - 2019_2020 Semester 2
 Data Mining (WQD7005)
 
