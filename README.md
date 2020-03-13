@@ -1,7 +1,7 @@
 # Data Mining
 Data Mining Project (WQD7005)
 
-## Project title: Text mining on customer feedbacks of different laptop brands.
+### Project title: Text mining on customer feedbacks of different laptop brands.
 
 My group and I aim to do an analysis of customer feedbacks of different laptop brands such as Apple, Dell, Asus, Acer and Lenovo by using data from social media. In this Github you will be able to see our progress to achieve that objective. There are a total of five milestones for this project.
 
