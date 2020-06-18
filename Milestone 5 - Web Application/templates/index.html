@@ -1,0 +1,97 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Welcome to the Sentiment Analyser App</h1>
+<h4>WQD7005 - Data Mining Project</h4>
+<p style = "margin-bottom:100px">
+  Sentiment Analyser is an app for Natural Language Processing (NLP). This app utilizes VADER Sentiment tool to <br />
+  classify whether a social media text on a laptop brand and model is positive, neutral or negative with calculated <br />
+  compound score. <br /><br />
+  VADER (Valence Aware Dictionary and Sentiment Reasoner) is a lexicon and rule-based sentiment analysis tool that <br />
+  is specifically attuned to sentiments expressed in social media. The Compound score is a metric that calculates <br />
+  the sum of all the lexicon ratings which have been normalized between -1(most extreme negative) and +1 (most <br />
+  extreme positive). Finally, based on compound score, we will classify the text as positive, neutral or negative <br />
+  sentiment.
+</p>
+
+  <form action="" method="post" name="inputText">
+    <fieldset>
+      <legend>Input text</legend>
+      {{ form.hidden_tag() }}
+      <div style = font-size:20px;>
+
+        <p>
+          You can enter your text here:<br />
+          {{ form.inputText(size=400, placeholder="Write something ...") }}<br />
+
+          {% for error in form.inputText.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br />
+        </p>
+        <p>User text - Language:<br />
+            <input type="radio" name="lang" value="EN" checked="checked">English</p>
+        </div>
+    </fieldset>
+    <fieldset>
+      <legend>Settings</legend>
+
+        <p>{{ form.ignoreCase }} ignore case
+
+        <a href="#explainCase">   [What is this?]</a>
+        <div id="explainCase" class="modalDialog">
+          <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <h2>ignore case</h2>
+            <p>By checking this box, it will change all capital letters into lower-case.</p>
+            <p>In this way words like "book" and "Book" will be considered the same.</p>
+          </div>
+        </div> </p>
+
+        <p>{{ form.ignoreStopWords }} ignore stopwords (articles, conjunctions, ...)
+          <a href="#explainStopwords">   [What is this?]</a>
+          <div id="explainStopwords" class="modalDialog">
+            <div>
+              <a href="#close" title="Close" class="close">X</a>
+              <h2>ignore stopwords</h2>
+              <p>By checking this box, it will ignore all stopwords in the text.</p>
+              <p>Stop words are those common words that do not contribute much to the content or meaning
+                of a document (e.g., for English language these could be “the”, “a”, “is”, “to”, etc.).</p>
+            </div>
+          </div> </p>
+
+        <p><input type="checkbox" name="stemming" unchecked>
+        Enable stemming (English only, will be slower):
+
+        Stem or&nbsp;
+        <label class="switch">
+          <input type="checkbox" name="engine"  checked>
+          <span class="slider"></span>
+        </label>
+        &nbsp;Lemmas
+        <a href="#explainSwitch">    [What is this?]</a>
+
+        <div id="explainSwitch" class="modalDialog">
+          <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <h2>Stems or Lemmas?</h2>
+            <p>Stem is the part of the word that never changes even when morphologically inflected;
+            a lemma is the base form of the word. </p>
+            <p>The switch will analyse the text and reduce the tokens to one of the two forms,
+              using NLTK (Natural Language toolkit), a Python library for processing human languages data.</p>
+          </div>
+        </div></p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Tools available</legend>
+        <nav>
+          <button class="big-btn" name="action-button" type="submit" value="TA">Basic Analysis</button>
+          <button class="big-btn" type="submit" value="SA">Sentiment Analysis</button>
+        </nav>
+
+      </div>
+    </fieldset>
+  </form>
+{% endblock %}
