@@ -1,0 +1,1 @@
+We had used Hive as the database to store our data in Milestone 2 but unfortunately while completing Milestone 3, the virtual machine had crashed so we changed to using MySQL to access data using Python.
