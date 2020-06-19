@@ -63,7 +63,3 @@ IGNORE 1 ROWS;
 
 SELECT * FROM twitter;
 
-DROP DATABASE data_mining;
-DROP TABLE reddit;
-DROP TABLE comments;
-DROP TABLE twitter;
