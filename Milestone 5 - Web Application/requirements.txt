@@ -25,7 +25,7 @@ MyApplication==0.1.0
 mysql-connector-python==8.0.20
 networkx==2.4
 nltk==3.4.5
-numpy==1.18.5
+numpy==1.22.0
 pandas==1.0.4
 Pillow==7.1.2
 plac==0.9.6
